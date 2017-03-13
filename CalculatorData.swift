@@ -8,21 +8,33 @@
 
 import Foundation
 
-struct CalculatorData {
+
+class CalculatorData {
+    var price: Double
+    var dollarsOff: Double
+    var discountPerc: Double
+    var otherDiscountPerc: Double
+    var taxPerc: Double
+    var originalPrice: Double
+    var discountPrice: Double
     
-    let price = 0.0
-    let dollarsOff = 0.0
-    let discountPerc = 0.0
-    let otherDiscountPerc = 0.0
-    let taxPerc = 0.0
-    let originalPrice = 0.0
-    let discountPrice = 0.0
-    
-    static let sharedInstance = CalculatorData()
-    
-    func getDiscountPrice() -> Bool {
-        return true
+    init(price: Double, dollarsOff: Double, discountPerc: Double, otherDiscountPerc: Double,
+         taxPerc: Double,originalPrice: Double, discountPrice: Double) {
+        self.price = price
+        self.dollarsOff = dollarsOff
+        self.discountPerc = discountPerc
+        self.otherDiscountPerc = otherDiscountPerc
+        self.taxPerc = taxPerc
+        self.originalPrice = originalPrice
+        self.discountPrice  = discountPrice
     }
     
+    public var avgGrade: Double {
+        get {
+            return (dollarsOff + price)
+        }
+    }
+    // Singleton Pattern
+    static let shared: CalculatorData = CalculatorData(price: 0.0, dollarsOff: 0.0, discountPerc: 0.0, otherDiscountPerc: 0.0, taxPerc: 0.0, originalPrice: 0.0, discountPrice: 0.0)
     
 }

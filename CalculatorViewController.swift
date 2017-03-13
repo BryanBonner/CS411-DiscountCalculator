@@ -10,6 +10,9 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
+    
+    CalculatorData.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
