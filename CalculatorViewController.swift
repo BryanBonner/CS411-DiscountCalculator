@@ -11,11 +11,14 @@ import UIKit
 class CalculatorViewController: UIViewController {
 
     
-    CalculatorData.sharedInstance
+    //this allows us to create a constant to this shared instance of calculator data
+    let Data: CalculatorData = CalculatorData.shared
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
+        
     }
 
     override func didReceiveMemoryWarning() {
