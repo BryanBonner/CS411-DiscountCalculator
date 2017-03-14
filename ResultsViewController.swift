@@ -10,9 +10,14 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
+    let Data: CalculatorData = CalculatorData.shared
+    
+    @IBOutlet weak var resultLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        resultLabel.text = Data.price.description
     }
     
     override func didReceiveMemoryWarning() {
