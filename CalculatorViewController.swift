@@ -16,6 +16,9 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var dollarsOffTextField: UITextField!
+    @IBOutlet weak var discountPercTextField: UITextField!
+    @IBOutlet weak var otherDiscountTextField: UITextField!
+    @IBOutlet weak var taxPercTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +50,5 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         }
     
     }
-
-
 }
 
