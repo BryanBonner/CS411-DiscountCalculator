@@ -45,6 +45,12 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
             Data.price = Double(priceTextField.text!)!
         case dollarsOffTextField:
             Data.dollarsOff = Double(dollarsOffTextField.text!)!
+        case discountPercTextField:
+            Data.discountPerc = Double(discountPercTextField.text!)!
+        case otherDiscountTextField:
+            Data.otherDiscountPerc = Double(otherDiscountTextField.text!)!
+        case taxPercTextField:
+            Data.taxPerc = Double(taxPercTextField.text!)!
         default:
             break
         }
