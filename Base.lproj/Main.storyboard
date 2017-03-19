@@ -25,9 +25,6 @@
                                 <rect key="frame" x="150" y="582" width="74" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="ycM-k3-MWM" kind="show" id="UJf-Bf-nrA"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cZ5-vm-enj">
                                 <rect key="frame" x="214" y="86" width="111" height="30"/>
@@ -132,7 +129,7 @@
                         <viewControllerLayoutGuide type="top" id="yZ9-zg-auf"/>
                         <viewControllerLayoutGuide type="bottom" id="jGw-VU-tnr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cWe-MY-pl4">
+                    <view key="view" contentMode="scaleToFill" id="cWe-MY-pl4" customClass="GraphResultsView" customModule="DiscountCalculator" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -174,7 +171,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UJf-Bf-nrA"/>
         <segue reference="pGr-0Q-4Oa"/>
     </inferredMetricsTieBreakers>
 </document>
