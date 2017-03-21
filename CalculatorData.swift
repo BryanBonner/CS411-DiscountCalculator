@@ -31,11 +31,8 @@ class CalculatorData {
     
     func calculateDiscount() -> Double {
     
-           // discountPrice = originalPrice - ((discountPerc + //otherDiscountPerc) * originalPrice) + dollarsOff + (taxPerc //* 100.0 * originalPrice)
-            return (discountPrice + 10.0)
+        return (originalPrice - ((discountPerc/100 + otherDiscountPerc/100) * originalPrice) + dollarsOff + (taxPerc / 100.0 * originalPrice))
     
-        //tax = tax x original price
-        // discount = original price - ((discount perc + other discount perc) x price + dollars off) + (tax x original price)
     }
     // Singleton Pattern
     static let shared: CalculatorData = CalculatorData(price: 0.0, dollarsOff: 0.0, discountPerc: 0.0, otherDiscountPerc: 0.0, taxPerc: 0.0, originalPrice: 0.0, discountPrice: 0.0)

@@ -122,22 +122,22 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lx6-WN-yTQ">
-                                <rect key="frame" x="241" y="353" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lx6-WN-yTQ">
+                                <rect key="frame" x="241" y="353" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmM-Nn-fOA">
-                                <rect key="frame" x="241" y="382" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmM-Nn-fOA">
+                                <rect key="frame" x="241" y="382" width="84" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="0.72174030172413794" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="tlX-s7-rCv" appends="YES" id="z7f-Bw-71e"/>
@@ -145,7 +145,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Discount Calculator" id="VP5-TX-cko"/>
                     <connections>
+                        <outlet property="discountLabel" destination="pmM-Nn-fOA" id="K8X-nj-uGP"/>
+                        <outlet property="discountPercTextField" destination="6Lj-N8-yw1" id="TlQ-rL-upw"/>
+                        <outlet property="dollarsOffTextField" destination="6Pl-Yw-Kb8" id="p8a-Xo-7f2"/>
+                        <outlet property="otherDiscountTextField" destination="FVG-BZ-JA8" id="icV-HJ-2cc"/>
+                        <outlet property="priceLabel" destination="lx6-WN-yTQ" id="4If-Xp-TvC"/>
                         <outlet property="priceTextField" destination="cZ5-vm-enj" id="Jl7-9Y-Vav"/>
+                        <outlet property="taxPercTextField" destination="XBK-kw-nUL" id="48s-O0-fcB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdb-L8-BYM" userLabel="First Responder" sceneMemberID="firstResponder"/>
