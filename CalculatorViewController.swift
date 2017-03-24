@@ -46,22 +46,31 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
-        case priceTextField:
-            Data.price = Double(priceTextField.text!)!
-            priceLabel.text = Data.price.description
-        case dollarsOffTextField:
-            Data.dollarsOff = Double(dollarsOffTextField.text!)!
-        case discountPercTextField:
-            Data.discountPerc = Double(discountPercTextField.text!)!
-        case otherDiscountTextField:
-            Data.otherDiscountPerc = Double(otherDiscountTextField.text!)!
-        case taxPercTextField:
-            Data.taxPerc = Double(taxPercTextField.text!)!
-            Data.discountPrice = Data.originalPrice - Data.calculateDiscount()
-            discountLabel.text = Data.discountPrice.description
-        default:
-            break
+            case priceTextField:
+                if(textField.text != "") {
+                    Data.price = Double(priceTextField.text!)!
+                    priceLabel.text = Data.originalPrice.description
+                }
+            case dollarsOffTextField:
+           if(textField.text != "") {
+                Data.dollarsOff = Double(dollarsOffTextField.text!)!
+            }
+            case discountPercTextField:
+           if(textField.text != "") {
+                Data.discountPerc = Double(discountPercTextField.text!)!
+            }
+            case otherDiscountTextField:
+           if(textField.text != "") {
+                Data.otherDiscountPerc = Double(otherDiscountTextField.text!)!
         }
+            case taxPercTextField:
+           if(textField.text != "") {
+                Data.taxPerc = Double(taxPercTextField.text!)!
+        }
+            default:
+                break
+        }
+        discountLabel.text = Data.calculateDiscount().description
     
     }
  

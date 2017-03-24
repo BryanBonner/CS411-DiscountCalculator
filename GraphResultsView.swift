@@ -21,7 +21,8 @@ class GraphResultsView: UIView {
         let rightGuide:CGFloat = screenWidth/2.0 + 30.0
         let topGuide:CGFloat = 48.0
         
-        let discount:CGFloat = CGFloat(Data.discountPrice)
+        let discountPercent:CGFloat = CGFloat(Data.discountPrice/Data.originalPrice)
+        let savedPercent:CGFloat = 100.0 - discountPercent
         
         // Draw Rectangle
         context.setFillColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
@@ -31,12 +32,12 @@ class GraphResultsView: UIView {
         context.fill(CGRect(x: screenWidth/2.0, y: topGuide, width: screenWidth/2.0, height:screenHeight))
         
         context.setFillColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
-        context.fill(CGRect(x: screenWidth/2.0, y: screenHeight * CGFloat(discount), width: screenWidth/2.0, height:screenHeight))
+        context.fill(CGRect(x: screenWidth/2.0, y: screenHeight * discountPercent, width: screenWidth/2.0, height:screenHeight))
         
         // Draw Text
-        let originalPriceText = "Original Price\n\n" + "$" + Data.price.description
-        let savedText = "You Saved\n\n" + "$" + Data.discountPrice.description + "\n" + Data.discountPerc.description
-        let payedText = "You Pay\n\n" +  "$" + (Data.price - Data.discountPrice).description + "\n" + Data.discountPerc.description
+        let originalPriceText = "Original Price\n\n" + "$" + Data.calcOriginalWithTax().description
+        let savedText = "You Saved\n\n" + "$" + (Data.originalPrice - Data.discountPrice).description + "\n" + Data.discountPerc.description
+        let payedText = "You Pay\n\n" +  "$" + Data.discountPrice.description + "\n" + (Data.discountPrice/Data.originalPrice).description
         
         // Text Attributes
         let textAttributes = [
@@ -48,7 +49,7 @@ class GraphResultsView: UIView {
                     withAttributes: textAttributes)
         savedText.draw(at: CGPoint(x: rightGuide, y: topGuide + 60.0),
                      withAttributes: textAttributes)
-        payedText.draw(at: CGPoint(x: rightGuide, y: screenHeight * CGFloat(discount) + 30.0),
+        payedText.draw(at: CGPoint(x: rightGuide, y: screenHeight * discountPercent + 30.0),
                        withAttributes: textAttributes)
     }
 
