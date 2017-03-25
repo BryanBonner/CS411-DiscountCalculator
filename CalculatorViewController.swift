@@ -30,6 +30,14 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         discountPercTextField.delegate = self
         otherDiscountTextField.delegate = self
         taxPercTextField.delegate = self
+        
+        priceTextField.text = Data.price.description
+        dollarsOffTextField.text = Data.price.description
+        discountPercTextField.text = Data.discountPerc.description
+        otherDiscountTextField.text = Data.otherDiscountPerc.description
+        taxPercTextField.text = Data.taxPerc.description
+        priceLabel.text = Data.originalPrice.description
+        discountLabel.text = Data.discountPrice.description
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,31 +55,21 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         switch textField {
             case priceTextField:
-                if(textField.text != "") {
-                    Data.price = Double(priceTextField.text!)!
-                    priceLabel.text = Data.originalPrice.description
-                }
+                Data.price = Double(priceTextField.text!)!
+            
             case dollarsOffTextField:
-           if(textField.text != "") {
                 Data.dollarsOff = Double(dollarsOffTextField.text!)!
-            }
             case discountPercTextField:
-           if(textField.text != "") {
                 Data.discountPerc = Double(discountPercTextField.text!)!
-            }
             case otherDiscountTextField:
-           if(textField.text != "") {
                 Data.otherDiscountPerc = Double(otherDiscountTextField.text!)!
-        }
             case taxPercTextField:
-           if(textField.text != "") {
                 Data.taxPerc = Double(taxPercTextField.text!)!
-        }
             default:
                 break
         }
-        discountLabel.text = Data.calculateDiscount().description
-    
+        priceLabel.text = String(format: "%.2f", Data.calcOriginalWithTax())
+        discountLabel.text = String(format: "%.2f", Data.calculateDiscount())
     }
  
 }
