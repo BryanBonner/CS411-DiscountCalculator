@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  DiscountCalculator
 //
-//  Created by CampusUser on 3/13/17.
-//  Copyright © 2017 CPSC411. All rights reserved.
+//  Created by Bryan Bonner on 3/13/17.
+//  CPSC 411 - Assignment 3
 //
 
 import UIKit

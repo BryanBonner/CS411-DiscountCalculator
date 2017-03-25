@@ -1,9 +1,9 @@
 //
-//  ViewController.swift
+//  CalculatorViewController.swift
 //  DiscountCalculator
 //
-//  Created by CampusUser on 3/13/17.
-//  Copyright © 2017 CPSC411. All rights reserved.
+//  Created by Bryan Bonner on 3/13/17.
+//  CPSC 411 - Assignment 3
 //
 
 import UIKit
@@ -32,7 +32,7 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         taxPercTextField.delegate = self
         
         priceTextField.text = Data.price.description
-        dollarsOffTextField.text = Data.price.description
+        dollarsOffTextField.text = Data.dollarsOff.description
         discountPercTextField.text = Data.discountPerc.description
         otherDiscountTextField.text = Data.otherDiscountPerc.description
         taxPercTextField.text = Data.taxPerc.description
@@ -56,7 +56,6 @@ class CalculatorViewController: UIViewController, UITextFieldDelegate {
         switch textField {
             case priceTextField:
                 Data.price = Double(priceTextField.text!)!
-            
             case dollarsOffTextField:
                 Data.dollarsOff = Double(dollarsOffTextField.text!)!
             case discountPercTextField:
